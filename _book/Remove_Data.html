@@ -1,0 +1,336 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>删除数据 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Data_Aggregation.html" />
+    
+    
+    <link rel="prev" href="Update_data.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Import_Data.html">
+            
+                <a href="Import_Data.html">
+            
+                    
+                    导入示例数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Find_or_Query_Data.html">
+            
+                <a href="Find_or_Query_Data.html">
+            
+                    
+                    查找数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Update_data.html">
+            
+                <a href="Update_data.html">
+            
+                    
+                    更新数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="Remove_Data.html">
+            
+                <a href="Remove_Data.html">
+            
+                    
+                    删除数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Data_Aggregation.html">
+            
+                <a href="Data_Aggregation.html">
+            
+                    
+                    数据聚合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >删除数据</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x4F7F;&#x7528;-mongo-shell-&#x5220;&#x9664;&#x6570;&#x636E;">&#x4F7F;&#x7528; mongo Shell &#x5220;&#x9664;&#x6570;&#x636E;</h2>
+<h3 id="&#x6982;&#x89C8;">&#x6982;&#x89C8;</h3>
+<p>&#x4F7F;&#x7528;<code>remove()</code>&#x65B9;&#x6CD5;&#x4ECE;<code>collection</code>&#x4E2D;&#x5220;&#x9664;<code>document</code>&#x3002;&#x5728;&#x6B64;&#x65B9;&#x6CD5;&#x4E2D;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#x4EE5;&#x6B64;&#x6765;&#x51B3;&#x5B9A;&#x8981;&#x5220;&#x9664;&#x7684;&#x6587;&#x6863;&#x3002;</p>
+<p>&#x5220;&#x9664;&#x6240;&#x9700;&#x6761;&#x4EF6;&#x7684;&#x7ED3;&#x6784;&#x548C;&#x8BED;&#x6CD5;&#x548C;&#x67E5;&#x8BE2;&#x7684;&#x4E00;&#x6837;&#x3002;&#x4E0D;&#x719F;&#x6089;&#x7684;&#x53EF;&#x4EE5;&#x770B;&#x770B;<a href="https://docs.mongodb.com/getting-started/shell/query/" target="_blank">Find or Query Data with the mongo Shell</a></p>
+<h3 id="&#x9884;&#x5907;">&#x9884;&#x5907;</h3>
+<p>&#x672C;&#x8282;&#x7684;&#x4F8B;&#x5B50;&#x4F7F;&#x7528;<code>test</code>&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x540D;&#x4E3A;<code>restaurants</code>&#x7684;&#x96C6;&#x5408;&#x3002;&#x5173;&#x4E8E;&#x5411;&#x96C6;&#x5408;&#x4E2D;&#x586B;&#x5145;&#x6837;&#x672C;&#x6570;&#x636E;&#x7684;&#x8BF4;&#x660E;&#xFF0C;&#x8BF7;&#x770B;<a href="https://docs.mongodb.com/getting-started/shell/import-data/" target="_blank">&#x5BFC;&#x5165;&#x793A;&#x4F8B;&#x6570;&#x636E;</a></p>
+<p>&#x5728;<code>mongo shell</code>&#x4E2D;&#x8FDE;&#x63A5;&#x5DF2;&#x8FD0;&#x884C;&#x7684;<code>mongod</code>&#x5B9E;&#x4F8B;&#xFF0C;&#x5E76;&#x5207;&#x6362;&#x5230;<code>test</code>&#x6570;&#x636E;&#x5E93;</p>
+<pre><code class="lang-bash">use <span class="hljs-built_in">test</span>
+</code></pre>
+<h3 id="&#x5220;&#x9664;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6587;&#x6863;">&#x5220;&#x9664;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6587;&#x6863;</h3>
+<p>&#x4E0B;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#x5C06;&#x4F1A;&#x5220;&#x9664;&#x7B26;&#x5408;&#x6307;&#x5B9A;&#x6761;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6587;&#x6863;&#x3002;</p>
+<pre><code class="lang-bash">db.restaurants.remove( { <span class="hljs-string">&quot;borough&quot;</span>: <span class="hljs-string">&quot;Manhattan&quot;</span> } )
+</code></pre>
+<p>&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x64CD;&#x4F5C;&#x72B6;&#x6001;&#x7684; <code>WriteResult</code> &#x5BF9;&#x8C61;&#x3002;<code>nRemoved</code> &#x5B57;&#x6BB5;&#x6307;&#x5B9A;&#x4E86;&#x88AB;&#x5220;&#x9664;&#x6587;&#x6863;&#x7684;&#x6570;&#x76EE;&#x3002;
+Use the justOne Option</p>
+<h3 id="&#x4F7F;&#x7528;-justone-&#x9009;&#x9879;">&#x4F7F;&#x7528; <code>justOne</code> &#x9009;&#x9879;</h3>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>remove()</code> &#x65B9;&#x6CD5;&#x4F1A;&#x5220;&#x9664;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x6587;&#x6863;&#x3002;&#x4F7F;&#x7528; <code>justOne</code> &#x9009;&#x9879;&#x53EF;&#x4EE5;&#x9650;&#x5236;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#xFF0C;&#x4F7F;&#x5176;&#x4EC5;&#x4EC5;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x7B26;&#x5408;&#x5220;&#x9664;&#x6761;&#x4EF6;&#x7684;&#x6587;&#x6863;&#x3002;</p>
+<pre><code class="lang-bash">db.restaurants.remove( { <span class="hljs-string">&quot;borough&quot;</span>: <span class="hljs-string">&quot;Queens&quot;</span> }, { justOne: <span class="hljs-literal">true</span> } )
+</code></pre>
+<p>&#x6210;&#x529F;&#x7684;&#x64CD;&#x4F5C;&#x5E94;&#x8FD4;&#x56DE;&#x50CF;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x7684; <a href="https://docs.mongodb.com/manual/reference/method/WriteResult/#WriteResult" target="_blank">WriteResult</a> &#x5BF9;&#x8C61;&#xFF01;</p>
+<pre><code>WriteResult({ &quot;nRemoved&quot; : 1 })
+</code></pre><p>&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>nRemoved</code> &#x5B57;&#x6BB5;&#x6307;&#x5B9A;&#x88AB;&#x5220;&#x9664;&#x7684;&#x6587;&#x6863;&#x6570;&#x76EE;&#x3002;</p>
+<h3 id="&#x5220;&#x9664;&#x6240;&#x6709;&#x6570;&#x636E;">&#x5220;&#x9664;&#x6240;&#x6709;&#x6570;&#x636E;</h3>
+<p>&#x8981;&#x60F3;&#x5220;&#x9664;&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x6709;&#x6587;&#x6863;&#xFF0C;&#x53EA;&#x9700;&#x4F20;&#x9012;&#x7ED9; <code>remove()</code> &#x65B9;&#x6CD5;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;&#x6587;&#x6863;<code>{}</code>&#x4F5C;&#x4E3A;&#x6761;&#x4EF6;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-bash">db.restaurants.remove( { } )
+</code></pre>
+<p>&#x6B64;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x64CD;&#x4F5C;&#x72B6;&#x6001;&#x7684; WriteResult &#x5BF9;&#x8C61;&#x3002;nRemoved &#x5B57;&#x6BB5;&#x6307;&#x5B9A;&#x4E86;&#x88AB;&#x5220;&#x9664;&#x6587;&#x6863;&#x7684;&#x6570;&#x76EE;&#x3002; </p>
+<h3 id="&#x5220;&#x9664;&#x96C6;&#x5408;">&#x5220;&#x9664;&#x96C6;&#x5408;</h3>
+<p>&#x4E0A;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#x4EC5;&#x4EC5;&#x5220;&#x9664;&#x4E86;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x6587;&#x6863;&#x3002;&#x96C6;&#x5408;&#x672C;&#x8EAB;&#x548C;&#x5173;&#x4E8E;&#x96C6;&#x5408;&#x7684;&#x7D22;&#x5F15;&#x4F9D;&#x7136;&#x5B58;&#x5728;&#x3002;&#x76F8;&#x5BF9;&#x4E8E;&#x5220;&#x9664;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6587;&#x6863;&#x6765;&#x8BF4;&#xFF0C;&#x66F4;&#x6709;&#x6548;&#x7387;&#x7684;&#x4E5F;&#x8BB8;&#x662F;&#x5220;&#x9664;&#x6574;&#x4E2A;&#x96C6;&#x5408;&#x4EE5;&#x53CA;&#x7D22;&#x5F15;&#x540E;&#x91CD;&#x5EFA;&#x96C6;&#x5408;&#x548C;&#x7D22;&#x5F15;&#x3002;</p>
+<pre><code class="lang-bash">db.restaurants.drop()
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x540E;&#x5C06;&#x4F1A;&#x8FD4;&#x56DE;<code>true</code>&#x3002;</p>
+<pre><code class="lang-bash"><span class="hljs-literal">true</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x8981;&#x5220;&#x9664;&#x7684;&#x96C6;&#x5408;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x6B64;&#x64CD;&#x4F5C;&#x5C06;&#x4F1A;&#x8FD4;&#x56DE;<code>false</code>&#x3002;</p>
+<h3 id="&#x9644;&#x52A0;&#x4FE1;&#x606F;">&#x9644;&#x52A0;&#x4FE1;&#x606F;</h3>
+<p>&#x5728; <code>MongoDB</code> &#x624B;&#x518C;&#x4E2D;&#xFF0C;&#x67E5;&#x770B; <code>remove()</code> &#x548C; <code>drop()</code>
+<code>MongoDB</code> &#x4E2D;&#xFF0C;&#x5355;&#x4E2A;&#x6587;&#x6863;&#x4E0A;&#x7684; <code>write</code> &#x662F;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x5355;&#x4E2A;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x8981;&#x5220;&#x9664;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x6587;&#x6863;&#xFF0C;&#x90A3;&#x4E48;&#x6B64;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x548C;&#x5176;&#x4ED6; <code>write</code> &#x64CD;&#x4F5C;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;&#x5728; <code>MongoDB</code> &#x624B;&#x518C;&#x4E2D;&#x67E5;&#x770B; <a href="http://docs.mongodb.com/manual/core/write-operations-atomicity" target="_blank">Atomicity</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Update_data.html" class="navigation navigation-prev " aria-label="Previous page: 更新数据">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Data_Aggregation.html" class="navigation navigation-next " aria-label="Next page: 数据聚合">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"删除数据","level":"1.5","depth":1,"next":{"title":"数据聚合","level":"1.6","depth":1,"path":"Data_Aggregation.md","ref":"Data_Aggregation.md","articles":[]},"previous":{"title":"更新数据","level":"1.4","depth":1,"path":"Update_data.md","ref":"Update_data.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Remove_Data.md","mtime":"2017-02-28T09:42:52.646Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-28T10:29:37.982Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

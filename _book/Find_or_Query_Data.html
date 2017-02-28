@@ -1,0 +1,368 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>查找数据 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Update_data.html" />
+    
+    
+    <link rel="prev" href="Import_Data.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Import_Data.html">
+            
+                <a href="Import_Data.html">
+            
+                    
+                    导入示例数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="Find_or_Query_Data.html">
+            
+                <a href="Find_or_Query_Data.html">
+            
+                    
+                    查找数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Update_data.html">
+            
+                <a href="Update_data.html">
+            
+                    
+                    更新数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Remove_Data.html">
+            
+                <a href="Remove_Data.html">
+            
+                    
+                    删除数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Data_Aggregation.html">
+            
+                <a href="Data_Aggregation.html">
+            
+                    
+                    数据聚合
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >查找数据</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x4F7F;&#x7528;-mongo-shell-&#x67E5;&#x627E;&#x6216;&#x67E5;&#x8BE2;&#x6570;&#x636E;"><a href="https://docs.mongodb.com/getting-started/shell/query/#find-or-query-data-with-the-mongo-shell" target="_blank">&#x4F7F;&#x7528; mongo shell &#x67E5;&#x627E;&#x6216;&#x67E5;&#x8BE2;&#x6570;&#x636E;</a></h2>
+<h3 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h3>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>find()</code> &#x65B9;&#x6CD5;&#x6765;&#x4ECE; MongoDB &#x7684;&#x96C6;&#x5408;&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;.&#x6240;&#x6709;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x90FD;&#x9650;&#x4E8E; MongoDB &#x4E2D;&#x7684;&#x5355;&#x4E2A;&#x96C6;&#x5408;&#x3002;</p>
+<p>&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6587;&#x6863;,&#x6216;&#x8005;&#x4EC5;&#x4EC5;&#x8FD4;&#x56DE;&#x7279;&#x5B9A;(&#x901A;&#x8FC7;&#x6761;&#x4EF6;&#x8FC7;&#x6EE4;)&#x7684;&#x6587;&#x6863;.&#x9700;&#x8981;&#x628A;&#x6761;&#x4EF6;&#x4F5C;&#x4E3A; <code>find()</code> &#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<p><code>find()</code> &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x6E38;&#x6807;(cursor),&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x8FD4;&#x56DE;&#x6587;&#x6863;&#x7684;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x3002;</p>
+<h3 id="&#x9884;&#x5907;">&#x9884;&#x5907;</h3>
+<p>&#x672C;&#x8282;&#x7684;&#x4F8B;&#x5B50;&#x5C06;&#x4F7F;&#x7528; <code>test</code> &#x6570;&#x636E;&#x5E93;&#x4E2D;&#x540D;&#x4E3A; <code>restaurants</code> &#x7684;&#x96C6;&#x5408;&#x3002;&#x5173;&#x4E8E;&#x6837;&#x672C;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x96C6;&#x5408;&#x7684;&#x586B;&#x5145;&#x8BF4;&#x660E;&#xFF0C;&#x8BF7;&#x53C2;&#x9605; <a href="https://docs.mongodb.com/getting-started/shell/import-data/" target="_blank">Import Example Dataset</a></p>
+<p>&#x5728; mongo shell &#x4E2D;&#x8FDE;&#x63A5;&#x4E00;&#x4E2A;&#x8FD0;&#x884C;&#x7684; mongod &#x5B9E;&#x4F8B;, &#x5207;&#x6362;&#x5230; <code>test</code> &#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<pre><code class="lang-bash">&gt; use <span class="hljs-built_in">test</span>
+</code></pre>
+<h3 id="&#x67E5;&#x8BE2;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6587;&#x6863;">&#x67E5;&#x8BE2;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6587;&#x6863;</h3>
+<p>&#x5982;&#x679C;&#x8981;&#x8FD4;&#x56DE;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6587;&#x6863;,&#x5C31;&#x4E0D;&#x8981;&#x5728;&#x8C03;&#x7528; <code>find()</code> &#x65B9;&#x6CD5;&#x65F6;&#x4F7F;&#x7528;&#x4EFB;&#x4F55;&#x6761;&#x4EF6;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;.&#x4E3E;&#x4E2A;&#x6817;&#x5B50;, &#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x5C31;&#x4F1A;&#x8FD4;&#x56DE; <code>restaurants</code> &#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6587;&#x6863;&#x3002;</p>
+<pre><code class="lang-bash">&gt; db.restaurants.find()
+</code></pre>
+<h3 id="&#x6DFB;&#x52A0;&#x7279;&#x5B9A;&#x6761;&#x4EF6;">&#x6DFB;&#x52A0;&#x7279;&#x5B9A;&#x6761;&#x4EF6;</h3>
+<p>&#x67E5;&#x8BE2;&#x7684;&#x6761;&#x4EF6;&#x9075;&#x4ECE;&#x5982;&#x4E0B;&#x5F62;&#x5F0F;:
+<code>{ &lt;field1&gt;: &lt;value1&gt;, &lt;field2&gt;: &lt;value2&gt;, ... }</code></p>
+<p>&#x6709;&#x4E24;&#x70B9;&#x9700;&#x8981;&#x6CE8;&#x610F;:</p>
+<ul>
+<li>&#x5982;&#x679C;<field>&#x662F;&#x9876;&#x5C42;&#x5B57;&#x6BB5;&#x5E76;&#x4E14;&#x4E0D;&#x662F;&#x5D4C;&#x5957;&#x7684;&#x6587;&#x6863;&#x6216;&#x8005;&#x6570;&#x7EC4;,&#x5B57;&#x6BB5;(field)&#x7684;&#x540D;&#x5B57;&#x53EF;&#x4EE5;&#x4E0D;&#x4F7F;&#x7528;&#x5F15;&#x53F7;&#x3002;</field></li>
+</ul>
+<ul>
+<li>&#x5982;&#x679C; <field> &#x662F;&#x5D4C;&#x5957;&#x7684;&#x6587;&#x6863;&#x6216;&#x6570;&#x7EC4;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5706;&#x70B9;&#x7B26;&#x53F7;(.)&#x8BBF;&#x95EE;&#x5B57;&#x6BB5;&#x3002;&#x4F7F;&#x7528;&#x5706;&#x70B9;&#x7B26;&#x53F7;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5F15;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#x3002;</field></li>
+</ul>
+<h3 id="&#x901A;&#x8FC7;&#x9876;&#x5C42;&#x5B57;&#x6BB5;&#x67E5;&#x8BE2;">&#x901A;&#x8FC7;&#x9876;&#x5C42;&#x5B57;&#x6BB5;&#x67E5;&#x8BE2;</h3>
+<p>&#x4E0B;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#x5C06;&#x4F1A;&#x627E;&#x5230; <code>borough</code> &#x5B57;&#x6BB5;&#x540D;&#x7B49;&#x4E8E;&#x201C;Manhattan&#x201D;&#x7684;&#x6587;&#x6863;&#x3002;</p>
+<pre><code class="lang-bash">&gt; db.restaurants.find( { <span class="hljs-string">&quot;borough&quot;</span>: <span class="hljs-string">&quot;Manhattan&quot;</span> } )
+
+&gt; db.restaurants.find({borough:<span class="hljs-string">&apos;Manhattan&apos;</span>}) <span class="hljs-comment"># &#x524D;&#x9762;&#x8BF4;&#x5230; &#x9876;&#x5C42;&#x5B57;&#x6BB5;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x5F15;&#x53F7;&#xFF0C;&#x4E8B;&#x5B9E;&#x8BC1;&#x660E; mongo &#x662F;&#x6CA1;&#x6709;&#x9A97;&#x4EBA;&#x7684;&#xFF0C;&#x54C8;&#x54C8;&#xFF01;</span>
+</code></pre>
+<p>&#x8FD4;&#x56DE;&#x7684;&#x96C6;&#x5408;&#x4E2D;&#x53EA;&#x4F1A;&#x5305;&#x542B;&#x5339;&#x914D;&#x7684;&#x6587;&#x6863;&#x3002;</p>
+<h4 id="&#x67E5;&#x8BE2;&#x5D4C;&#x5165;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;">&#x67E5;&#x8BE2;&#x5D4C;&#x5165;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;</h4>
+<p>&#x4F7F;&#x7528; &#x5706;&#x70B9;&#x7B26;&#x53F7; &#x4E3A;&#x5D4C;&#x5165;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x6307;&#x5B9A;&#x6761;&#x4EF6;&#x65F6;&#xFF0C;&#x5706;&#x70B9;&#x7B26;&#x53F7; &#x8981;&#x6C42;&#x6574;&#x4E2A;&#x5B57;&#x6BB5;&#x540D;&#x90FD;&#x8981;&#x7528;&#x5F15;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#x6F14;&#x793A;&#x4E86;&#x4E3A;&#x5D4C;&#x5165; <code>address</code> &#x6587;&#x6863;&#x4E2D;&#x7684; <code>zipcode</code> &#x5B57;&#x6BB5;&#x6307;&#x5B9A;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-bash">&gt; db.restaurants.find( { <span class="hljs-string">&quot;address.zipcode&quot;</span>: <span class="hljs-string">&quot;10075&quot;</span> } )
+</code></pre>
+<p>&#x5173;&#x4E8E;&#x66F4;&#x591A;&#x5728;&#x5D4C;&#x5165;&#x6587;&#x6863;&#x4E2D;&#x67E5;&#x8BE2;&#x5B57;&#x6BB5;&#x7684;&#x65B9;&#x6CD5;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x770B; <a href="https://docs.mongodb.com/manual/tutorial/query-documents/#read-operations-subdocuments" target="_blank">Query on Embedded Documents</a></p>
+<h4 id="&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x67E5;&#x8BE2;&#x5B57;&#x6BB5;">&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x67E5;&#x8BE2;&#x5B57;&#x6BB5;</h4>
+<p><code>grades</code> &#x6570;&#x7EC4;&#x4E2D;&#x5305;&#x542B;&#x5D4C;&#x5165;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x4F7F;&#x7528;&#x5706;&#x70B9;&#x7B26;&#x53F7;&#xFF0C;&#x5E76;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#x6765;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x6F14;&#x793A;&#x4E86; &#x4ECE; <code>grades</code> &#x6570;&#x7EC4;&#x4E2D;&#x627E;&#x51FA;&#x5D4C;&#x5165;&#x7684;&#x6587;&#x6863;&#x91CC; <code>grade</code> &#x7B49;&#x4E8E; B&#x7684;&#x5B57;&#x6BB5;&#x3002;</p>
+<pre><code class="lang-bash">&gt; db.restaurants.find( { <span class="hljs-string">&quot;grades.grade&quot;</span>: <span class="hljs-string">&quot;B&quot;</span> } )
+</code></pre>
+<p>&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x67E5;&#x8BE2;&#x4FE1;&#x606F;&#x7684;&#x65B9;&#x6CD5;&#xFF0C; &#x6BD4;&#x5982;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x6761;&#x4EF6; &#x8BF7;&#x53C2;&#x9605;<a href="https://docs.mongodb.com/manual/tutorial/query-documents/#read-operations-arrays" target="_blank">Query on Arrays</a> &#x548C; $elemMatch</p>
+<h3 id="&#x6307;&#x5B9A;&#x5E26;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x6761;&#x4EF6;">&#x6307;&#x5B9A;&#x5E26;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x6761;&#x4EF6;</h3>
+<p>MongoDB &#x63D0;&#x4F9B;&#x8FD0;&#x7B97;&#x7B26;&#x6765;&#x6307;&#x5B9A;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982; &#x6BD4;&#x8F83;(comparsion)&#x8FD0;&#x7B97;&#x7B26;&#x3002;&#x5C3D;&#x7BA1;&#x6709;&#x4E9B;&#x4F8B;&#x5916;&#xFF0C; &#x6BD4;&#x5982; <code>$or</code>&#x548C;<code>$and</code>&#x6761;&#x4EF6;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x4F46;&#x662F;&#x4F7F;&#x7528;&#x8FD0;&#x7B97;&#x7B26;&#x7684;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#x5927;&#x90FD;&#x7B26;&#x5408;&#x5982;&#x4E0B;&#x5F62;&#x5F0F;&#x3002;
+<code>{ &lt;field1&gt;: { &lt;operator1&gt;: &lt;value1&gt; } }</code></p>
+<p>&#x5B8C;&#x6574;&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x5217;&#x8868;&#xFF0C;&#x8BF7;&#x67E5;&#x9605;<a href="http://docs.mongodb.com/manual/reference/operator/query" target="_blank">query operators</a></p>
+<h4 id="&#x5927;&#x4E8E;&#x8FD0;&#x7B97;&#x7B26;gt">&#x5927;&#x4E8E;&#x8FD0;&#x7B97;&#x7B26;(<code>$gt</code>)</h4>
+<p>&#x67E5;&#x8BE2;&#x5D4C;&#x5165; <code>grades</code> &#x6570;&#x7EC4;&#x4E2D;&#x5B57;&#x6BB5;&#x5206;&#x6570;&#x5927;&#x4E8E;30&#x7684;&#x6587;&#x6863;</p>
+<pre><code>db.restaurants.find( { &quot;grades.score&quot;: { $gt: 30 } } )
+</code></pre><h4 id="&#x5C0F;&#x4E8E;&#x8FD0;&#x7B97;&#x7B26;lt">&#x5C0F;&#x4E8E;&#x8FD0;&#x7B97;&#x7B26;(<code>$lt</code>)</h4>
+<p>&#x67E5;&#x8BE2;&#x5D4C;&#x5165; <code>grades</code> &#x6570;&#x7EC4;&#x4E2D;&#x5B57;&#x6BB5;&#x5206;&#x6570;&#x5C0F;&#x4E8E;10&#x7684;&#x6587;&#x6863;</p>
+<pre><code class="lang-bash">db.restaurants.find( { <span class="hljs-string">&quot;grades.score&quot;</span>: { <span class="hljs-variable">$lt</span>: 10 } } )
+</code></pre>
+<h3 id="&#x7EC4;&#x5408;&#x6761;&#x4EF6;">&#x7EC4;&#x5408;&#x6761;&#x4EF6;</h3>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x903B;&#x8F91;&#x4E0E;(AND)&#x548C;&#x903B;&#x8F91;&#x6216;(OR)&#x628A;&#x591A;&#x4E2A;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x4F7F;&#x7528; </p>
+<h4 id="&#x903B;&#x8F91;&#x4E0E;">&#x903B;&#x8F91;&#x4E0E;</h4>
+<p>&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x4E24;&#x4E2A;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#xFF0C;&#x5E76;&#x7528;&#x9017;&#x53F7;&#x628A;&#x5979;&#x4EEC;&#x9694;&#x5F00;&#x3002;&#x591A;&#x4E2A;&#x6761;&#x4EF6;&#x4E5F;&#x4E0D;&#x662F;&#x4E0D;&#x53EF;&#x4EE5;&#xFF0C;&#x8BB0;&#x5F97;&#x7528;&#x9017;&#x53F7;&#x9694;&#x5F00;&#x5C31;&#x884C;&#x3002;&#x5F53;&#x6240;&#x6709;&#x6761;&#x4EF6;&#x90FD;&#x7B26;&#x5408;&#x65F6;&#x624D;&#x80FD;&#x6B63;&#x786E;&#x67E5;&#x8BE2;&#x3002;</p>
+<pre><code class="lang-bash">&gt; db.restaurants.find( { <span class="hljs-string">&quot;cuisine&quot;</span>: <span class="hljs-string">&quot;Italian&quot;</span>, <span class="hljs-string">&quot;address.zipcode&quot;</span>: <span class="hljs-string">&quot;10075&quot;</span> } )
+</code></pre>
+<h4 id="&#x903B;&#x8F91;&#x6216;">&#x903B;&#x8F91;&#x6216;</h4>
+<p>&#x4F7F;&#x7528;&#x903B;&#x8F91;&#x6216;&#x7EC4;&#x4E2A;&#x591A;&#x4E2A;&#x6761;&#x4EF6;&#xFF0C;&#x7B26;&#x5408;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#x5C31;&#x884C;&#x3002;</p>
+<pre><code class="lang-bash">db.restaurants.find(
+   { <span class="hljs-variable">$or</span>: [ { <span class="hljs-string">&quot;cuisine&quot;</span>: <span class="hljs-string">&quot;Italian&quot;</span> }, { <span class="hljs-string">&quot;address.zipcode&quot;</span>: <span class="hljs-string">&quot;10075&quot;</span> } ] }
+)
+</code></pre>
+<h3 id="&#x5BF9;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x6392;&#x5E8F;">&#x5BF9;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x6392;&#x5E8F;</h3>
+<p>&#x5BF9;&#x7ED3;&#x679C;&#x96C6;&#x6307;&#x5B9A;&#x987A;&#x5E8F;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x67E5;&#x8BE2;&#x65F6;&#x6DFB;&#x52A0;<code>sort()</code>&#x65B9;&#x6CD5;&#x3002;&#x5E76;&#x5728;<code>sort()</code>&#x65B9;&#x6CD5;&#x4E2D;&#x6DFB;&#x52A0;&#x5305;&#x542B;<code>field(s)</code>&#x7684;&#x6587;&#x6863;&#xFF0C; &#x4EE5;&#x6B64;&#x6765;&#x786E;&#x5B9A;&#x6392;&#x5E8F;&#x65B9;&#x5F0F;&#x4EE5;&#x53CA;&#x76F8;&#x5E94;&#x7684;&#x6392;&#x5E8F;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x4E3E;&#x4E2A;&#x6817;&#x5B50;&#xFF1A;&#x4E0B;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#x8FD4;&#x56DE;<code>restaurants</code>&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x6587;&#x6863;&#x9996;&#x5148;&#x4EE5;<code>borough</code>&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x5347;&#x5E8F;&#x6392;&#x5217;&#xFF0C; &#x7136;&#x540E;&#xFF0C; &#x5BF9;&#x4E8E;&#x6BCF;&#x4E00;&#x4E2A;<code>borough</code>&#x53C8;&#x4EE5;<code>address.zipcode</code>&#x5B57;&#x6BB5;&#x7684;&#x503C;&#x5347;&#x5E8F;&#x6392;&#x5217;&#x3002;</p>
+<pre><code class="lang-bash">db.restaurants.find().sort( { <span class="hljs-string">&quot;borough&quot;</span>: 1, <span class="hljs-string">&quot;address.zipcode&quot;</span>: 1 } )
+</code></pre>
+<p>&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x5C06;&#x4F1A;&#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x987A;&#x5E8F;&#x7684;&#x6392;&#x5E8F;&#x7ED3;&#x679C;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Import_Data.html" class="navigation navigation-prev " aria-label="Previous page: 导入示例数据">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Update_data.html" class="navigation navigation-next " aria-label="Next page: 更新数据">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"查找数据","level":"1.3","depth":1,"next":{"title":"更新数据","level":"1.4","depth":1,"path":"Update_data.md","ref":"Update_data.md","articles":[]},"previous":{"title":"导入示例数据","level":"1.2","depth":1,"path":"Import_Data.md","ref":"Import_Data.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Find_or_Query_Data.md","mtime":"2017-02-28T09:42:52.646Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-02-28T10:29:37.982Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
